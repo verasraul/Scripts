@@ -6,7 +6,7 @@ HOSTFILE=~/inv.ini
 
 for host in $(cat "$HOSTFILE"); do
     echo "🔗 Trying $USER1@$host..."
-    ssh -o ConnectTimeout=5 -o BatchMode=no -o PreferredAuthentications=password -t "$USER1@$host" "free -h"
+    ssh -o ConnectTimeout=5 -o BatchMode=no -o PreferredAuthentications=password -t "$USER1@$host" "whoami"
 
     # Check if SSH succeeded
     if [ $? -ne 0 ]; then
